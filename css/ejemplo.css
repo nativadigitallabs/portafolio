@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #EBEBEB;        
+    margin: 10px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 440px);
+    grid-template-rows: 85px 315px 315px 300px 85px;
+    grid-template-areas:
+        "header header header"
+        "section section aside"
+        "section section aside"
+        "main main aside"
+        "footer footer footer";
+}
+
+
+:root {
+    --cream:   #FAF5F3;
+    --pink-lt: #F5D9D4;
+    --pink-md: #E8A99A;
+    --pink-dk: #D4756A;
+    --black:   #111111;
+    --gray:    #888888;
+}
+
+h1, h2, h3, h4, h6, p, li {
+    color: var(--black);           
+}
+
+i {
+    color: var(--black);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--black);
+}
+
+a:hover {
+    color: var(--pink-dk);
+}
+
+.fondo {
+    background-color: var(--pink-lt);
+    border-radius: 16px;           
+}
+
+header,
+footer {
+    max-width: 1320px;
+}
+
+.section,
+main {
+    max-width: 880px;
+}
+
+aside {
+    max-width: 440px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 25px;
+    grid-area: header;
+    background-color: var(--cream);  
+}
+
+header .menu {
+    display: flex;
+    align-items: center;
+}
+
+header .menu ul {
+    display: flex;
+    list-style: none;
+    column-gap: 32px;               
+    margin: 0;
+    padding: 0;
+}
+
+header .menu ul li a {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+header .menu ul li a:hover {
+    color: var(--pink-dk);
+}
+
+
+.section {
+    grid-area: section;
+    display: flex;
+    column-gap: 10px;
+    margin: 10px 0;
+}
+
+
+.section .fondo {
+    display: flex;
+    align-items: center;         
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+}
+
+
+.section .fondo div {
+    width: 100%;
+}
+
+.section .fondo h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.section .fondo h1 span {
+    display: block;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 32px;
+    color: var(--pink-dk);
+    margin-top: 6px;
+}
+
+.section > div:last-child {
+    border-radius: 16px;
+    overflow: hidden;
+    flex: 1;
+    background: #D8C8C2;
+}
+
+.section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+}
+
+
+main {
+    grid-area: main;
+    display: flex;
+    column-gap: 10px;
+}
+
+main section h2 {
+    margin-bottom: 15px;
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--black);
+}
+
+main #sobremi,
+main #contacto {
+    width: 50%;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;        
+    border-radius: 16px;
+}
+
+main #sobremi {
+    background-color: var(--cream);
+    border: 1.5px solid var(--pink-lt);
+}
+
+main #sobremi p {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #444;
+    line-height: 1.7;
+}
+
+
+main #contacto.fondo-oscuro {
+    background-color: var(--pink-md);
+    transition: background-color 0.2s;
+}
+
+main #contacto.fondo-oscuro:hover {
+    background-color: var(--pink-dk);
+}
+
+main #contacto.fondo-oscuro h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 46px;
+    font-weight: 400;
+    color: white;
+    letter-spacing: -1.5px;
+    line-height: 1.0;
+    margin-bottom: 0;
+    margin-top: auto;
+}
+
+main #contacto.fondo-oscuro p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+aside {
+    grid-area: aside;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+aside #proyectos,
+aside .redes {
+    margin: 10px 0 0 10px;
+    padding: 24px;
+}
+
+aside #proyectos {
+    background-color: var(--pink-lt);
+    border-radius: 16px;
+    flex: 1;
+}
+
+
+aside #proyectos > h2 {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+aside #proyectos a {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px 0;
+    transition: padding-left 0.2s;
+}
+
+aside #proyectos a:hover {
+    padding-left: 4px;
+}
+
+aside #proyectos a div {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+aside #proyectos a div h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--black);
+    margin-bottom: 0;
+}
+
+aside #proyectos a div img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+aside .redes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cream);
+    border: 1.5px solid var(--pink-lt);
+    border-radius: 16px;
+    padding: 18px 24px;
+}
+
+aside .redes a {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--black);
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s;
+}
+
+aside .redes a:hover {
+    opacity: 1;
+    color: var(--black);
+}
+
+aside .redes a i {
+    font-size: 16px;
+    color: var(--black);
+}
+
+
+footer {
+    grid-area: footer;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: var(--cream);
+    border-radius: 16px;
+}
+
+footer p {
+    text-align: center;
+    font-size: 12px;
+    color: var(--gray);
+    letter-spacing: 0.5px;
+}
